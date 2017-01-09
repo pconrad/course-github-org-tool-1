@@ -47,11 +47,11 @@
       <ul>
         <% @emails.each do |email| %>
           <li>
-            <%= email.email %>
-            <% if email.primary %>
+            <%= email['email'] %>
+            <% if email['primary'] %>
               <span class="glyphicon glyphicon-info-sign text-primary" title="Primary email address"></span>
             <% end %>
-            <% if email.verified %>
+            <% if email['verified'] %>
               <span class="glyphicon glyphicon-ok-sign text-success" title="Verified email address"></span>
             <% else %>
               <span class="glyphicon glyphicon-exclamation-sign text-danger"></span> <b>Not verified!</b>

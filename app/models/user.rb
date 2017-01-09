@@ -16,7 +16,7 @@ class User < ApplicationRecord
     return if not course
     emails = client.emails
     emails.each do |e|
-      student = Student.where(email: e.email).first
+      student = Student.where(email: e['email']).first
       next if not student
       student.username = self.username
       student.save!
