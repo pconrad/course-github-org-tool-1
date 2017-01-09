@@ -1,5 +1,7 @@
 require_relative 'helpers/omniauth'
+require_relative 'helpers/mocktokit'
 RSpec.configure do |config|
+  config.include Mocktokit::OctokitHelpers, type: :feature
   config.include Omniauth::Mock
   config.include Omniauth::SessionHelpers, type: :feature
 end
